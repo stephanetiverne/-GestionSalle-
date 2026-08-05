@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Connexion PostgreSQL -->
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:postgresql://localhost:5432/GestionSalle
+        </property>
+
+        <property name="hibernate.connection.username">
+            postgres
+        </property>
+
+        <property name="hibernate.connection.password">
+            Steven82
+        </property>
+
+        <!-- Dialect PostgreSQL -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgreSQLDialect
+        </property>
+
+        <!-- Affichage des requêtes SQL -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Ne pas modifier automatiquement la base -->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+
+        <!-- declaaration entités -->
+        <mapping class="mg.gestionsalle.entity.Prof"/>
+        <mapping class="mg.gestionsalle.entity.Salle"/>
+        <mapping class="mg.gestionsalle.entity.Occuper"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
